@@ -1,10 +1,7 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
 
-import { useState, useEffect } from 'react'
-import { useRouter } from 'next/router'
-
-import { userService } from '../services/generic'
+import { useState } from 'react'
 
 import Home from './Home/home'
 import Login from './Login/login'
@@ -14,65 +11,27 @@ import Alert from '../components/alert'
 const App: NextPage = () => {
   const [isSigned, setIsSigned] = useState<Boolean>(false);
 
-  const router = useRouter();
-  const [user, setUser] = useState(null);
-  const [authorized, setAuthorized] = useState(false);
-
-  function authCheck(url: string) {
-    // redirect to login page if accessing a private page and not logged in 
-    setUser(userService.userValue);
-    const publicPaths = ['/account/login', '/account/register'];
-    const path = url.split('?')[0];
-    if (!userService.userValue && !publicPaths.includes(path)) {
-      setAuthorized(false);
-      router.push({
-        pathname: '/account/login',
-        query: { returnUrl: router.asPath }
-      });
-    } else {
-      setAuthorized(true);
-    }
-  }
-
-  useEffect(() => {
-    // on initial load - run auth check 
-    authCheck(router.asPath);
-
-    // on route change start - hide page content by setting authorized to false  
-    const hideContent = () => setAuthorized(false);
-    router.events.on('routeChangeStart', hideContent);
-
-    // on route change complete - run auth check 
-    router.events.on('routeChangeComplete', authCheck)
-
-    // unsubscribe from events in useEffect return function
-    return () => {
-      router.events.off('routeChangeStart', hideContent);
-      router.events.off('routeChangeComplete', authCheck);
-    }
-
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
-
   return (
     <>
       <Head>
-        <title>Next.js 11 - User Registration and Login Example</title>
+        <title>We Chat App Example</title>
 
         {/* eslint-disable-next-line @next/next/no-css-tags */}
-        <link href="//netdna.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet" />
+        <link 
+          href="//netdna.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+          rel="stylesheet" />
       </Head>
 
-      <div className={`app-container ${user ? 'bg-light' : ''}`}>
+      <div className={`app-container ${isSigned ? 'bg-light' : ''}`}>
         <Nav />
         <Alert />
         {
-          authorized
+          isSigned
           &&
           <Home />
         }
         {
-          !authorized
+          !isSigned
           &&
           <Login />
         }
