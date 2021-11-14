@@ -7,7 +7,7 @@ import Footer from "./Footer";
 
 import React from "react";
 
-import { withStyles } from "@material-ui/core/styles";
+import { withStyles } from "@mui/styles";
 
 const styles: any = (theme: any) => ({});
 

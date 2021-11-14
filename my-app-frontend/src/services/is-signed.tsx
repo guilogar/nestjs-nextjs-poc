@@ -1,3 +1,3 @@
-export const isSigned = (): Boolean => {
+export const isSigned = (): boolean => {
   return false;
 };

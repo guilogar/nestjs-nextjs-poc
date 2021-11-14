@@ -1,19 +1,24 @@
-import { makeStyles } from "@material-ui/core/styles";
-import AppBar from "@material-ui/core/AppBar";
-import Toolbar from "@material-ui/core/Toolbar";
-import Typography from "@material-ui/core/Typography";
-import Button from "@material-ui/core/Button";
-import IconButton from "@material-ui/core/IconButton";
-import MoreVertIcon from "@material-ui/icons/MoreVert";
-import Menu from "@material-ui/core/Menu";
-import MenuItem from "@material-ui/core/MenuItem";
-import Fade from "@material-ui/core/Fade";
-import Hidden from "@material-ui/core/Hidden";
-import Link from "@material-ui/core/Link";
-import { Link as RLink, animateScroll as scroll } from "react-scroll";
-import { useRouter } from "next/router";
 import React from "react";
-import { withStyles } from "@material-ui/core/styles";
+import { useRouter } from "next/router";
+
+import { AppBar } from "@mui/material";
+import { Toolbar } from "@mui/material";
+import { Typography } from "@mui/material";
+import { Button } from "@mui/material";
+import { IconButton } from "@mui/material";
+import { Menu } from "@mui/material";
+import { MenuItem } from "@mui/material";
+import { Fade } from "@mui/material";
+import { Hidden } from "@mui/material";
+import { Link } from "@mui/material";
+import { MoreVert } from "@mui/icons-material";
+
+import { makeStyles } from "@mui/styles";
+import { withStyles } from "@mui/styles";
+
+import { Link as RLink, animateScroll as scroll } from "react-scroll";
+
+import { common } from "@mui/material/colors";
 
 const styles: any = (theme: any) => ({
   root: {
@@ -21,11 +26,12 @@ const styles: any = (theme: any) => ({
   },
   menuButton: {
     marginRight: theme.spacing(2),
-    color: "black",
+    color: common.black,
   },
   title: {
     flexGrow: 1,
     cursor: "pointer",
+    color: common.black,
   },
 });
 const useStyles = makeStyles(styles);
@@ -51,7 +57,7 @@ const MobileMenu = () => {
         aria-haspopup="true"
         onClick={handleClick}
       >
-        <MoreVertIcon />
+        <MoreVert />
       </IconButton>
 
       <Menu
@@ -97,9 +103,11 @@ const Topbar = () => {
         <Toolbar>
           <Link href="/home">
             <Typography variant="h6" className={classes.title}>
-              Site Name
+              PoC
             </Typography>
           </Link>
+
+          <i className="vseparator" />
 
           <Hidden xsDown>
             <Link href="/about">
@@ -126,7 +134,6 @@ const Topbar = () => {
                 </Button>
               </Link>
             )}
-            <i className="vseparator" />
 
             <Link href="/register">
               <Button color="inherit" className={classes.menuButton}>

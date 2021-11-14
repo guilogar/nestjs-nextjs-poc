@@ -1,9 +1,9 @@
 import React from "react";
 import Document, { Html, Head, Main, NextScript } from "next/document";
-import { ServerStyleSheets } from "@material-ui/styles";
 import type { DocumentProps } from "next/document";
 
-import { withStyles } from "@material-ui/core/styles";
+import { ServerStyleSheets } from "@mui/styles";
+import { withStyles } from "@mui/styles";
 
 import theme from "../src/theme";
 
@@ -12,12 +12,6 @@ const MyDocument = (props: DocumentProps) => {
     <Html lang="en">
       <Head>
         <meta charSet="utf-8" />
-        {/* Use minimum-scale=1 to enable GPU rasterization */}
-        <meta
-          name="viewport"
-          content="minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no"
-        />
-        {/* PWA primary color */}
         <meta name="theme-color" content={theme.palette.primary.main} />
         <link
           rel="stylesheet"
