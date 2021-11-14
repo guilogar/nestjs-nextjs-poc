@@ -1,15 +1,13 @@
-import React from 'react';
-import Document, { Html, Head, Main, NextScript } from 'next/document';
-import { ServerStyleSheets } from '@material-ui/styles';
-import type { DocumentProps } from 'next/document'
+import React from "react";
+import Document, { Html, Head, Main, NextScript } from "next/document";
+import { ServerStyleSheets } from "@material-ui/styles";
+import type { DocumentProps } from "next/document";
 
-import { withStyles } from "@material-ui/core/styles"
+import { withStyles } from "@material-ui/core/styles";
 
-import theme from '../src/theme'
+import theme from "../src/theme";
 
-const styles: any = (theme: any) => ({})
-
-function MyDocument(props: DocumentProps) {
+const MyDocument = (props: DocumentProps) => {
   return (
     <Html lang="en">
       <Head>
@@ -32,7 +30,7 @@ function MyDocument(props: DocumentProps) {
       </body>
     </Html>
   );
-}
+};
 
 MyDocument.getInitialProps = async (ctx: any) => {
   // Resolution order
@@ -63,7 +61,8 @@ MyDocument.getInitialProps = async (ctx: any) => {
 
   ctx.renderPage = () =>
     originalRenderPage({
-      enhanceApp: (App: any) => (props: any) => sheets.collect(<App {...props} />),
+      enhanceApp: (App: any) => (props: any) =>
+        sheets.collect(<App {...props} />),
     });
 
   const initialProps = await Document.getInitialProps(ctx);
@@ -80,4 +79,6 @@ MyDocument.getInitialProps = async (ctx: any) => {
   };
 };
 
-export default withStyles(styles)(MyDocument)
+const styles: any = (theme: any) => ({});
+
+export default withStyles(styles)(MyDocument);

@@ -1,3 +1,3 @@
 export const isSigned = (): Boolean => {
-  return false
-}
+  return false;
+};

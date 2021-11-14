@@ -9,25 +9,25 @@ import Menu from "@material-ui/core/Menu";
 import MenuItem from "@material-ui/core/MenuItem";
 import Fade from "@material-ui/core/Fade";
 import Hidden from "@material-ui/core/Hidden";
-import Link from '@material-ui/core/Link'
+import Link from "@material-ui/core/Link";
 import { Link as RLink, animateScroll as scroll } from "react-scroll";
-import { useRouter } from 'next/router';
+import { useRouter } from "next/router";
 import React from "react";
-import { withStyles } from "@material-ui/core/styles"
+import { withStyles } from "@material-ui/core/styles";
 
 const styles: any = (theme: any) => ({
   root: {
-    flexGrow: 1
+    flexGrow: 1,
   },
   menuButton: {
     marginRight: theme.spacing(2),
-    color: 'black'
+    color: "black",
   },
   title: {
     flexGrow: 1,
-    cursor: 'pointer'
-  }
-})
+    cursor: "pointer",
+  },
+});
 const useStyles = makeStyles(styles);
 
 /* Menú que se visualiza en móviles */
@@ -66,27 +66,20 @@ const MobileMenu = () => {
           <MenuItem onClick={handleClose}>About</MenuItem>
         </Link>
 
-
         {router.pathname == "/" ? (
-          <RLink
-            to="serviceSection"
-            smooth={true}
-            offset={-10}
-            duration={500}
-          >
+          <RLink to="serviceSection" smooth={true} offset={-10} duration={500}>
             <MenuItem onClick={handleClose}>Services</MenuItem>
           </RLink>
         ) : (
           <Link href="/serviceSection">
             <MenuItem onClick={handleClose}>Services</MenuItem>
           </Link>
-        )
-        }
+        )}
 
-        <Link href='/register'>
+        <Link href="/register">
           <MenuItem onClick={handleClose}>Sign up</MenuItem>
         </Link>
-        <Link href='/login'>
+        <Link href="/login">
           <MenuItem onClick={handleClose}>Sign in</MenuItem>
         </Link>
       </Menu>
@@ -102,18 +95,15 @@ const Topbar = () => {
     <div className={classes.root}>
       <AppBar position="static">
         <Toolbar>
-          <Link href='/home'>
+          <Link href="/home">
             <Typography variant="h6" className={classes.title}>
               Site Name
             </Typography>
           </Link>
 
           <Hidden xsDown>
-            <Link href='/about'>
-              <Button
-                color="inherit"
-                className={classes.menuButton}
-              >
+            <Link href="/about">
+              <Button color="inherit" className={classes.menuButton}>
                 About
               </Button>
             </Link>
@@ -125,39 +115,27 @@ const Topbar = () => {
                 offset={-10}
                 duration={500}
               >
-                <Button
-                  color="inherit"
-                  className={classes.menuButton}
-                >
+                <Button color="inherit" className={classes.menuButton}>
                   Services
                 </Button>
               </RLink>
             ) : (
               <Link href="/serviceSection">
-                <Button
-                  color="inherit"
-                  className={classes.menuButton}
-                >
+                <Button color="inherit" className={classes.menuButton}>
                   Services
                 </Button>
               </Link>
             )}
             <i className="vseparator" />
 
-            <Link href='/register'>
-              <Button
-                color="inherit"
-                className={classes.menuButton}
-              >
+            <Link href="/register">
+              <Button color="inherit" className={classes.menuButton}>
                 Sign up
               </Button>
             </Link>
 
-            <Link href='/login'>
-              <Button
-                color="inherit"
-                className={classes.menuButton}
-              >
+            <Link href="/login">
+              <Button color="inherit" className={classes.menuButton}>
                 Sign in
               </Button>
             </Link>
@@ -176,6 +154,6 @@ const Topbar = () => {
       `}</style>
     </div>
   );
-}
+};
 
-export default withStyles(styles)(Topbar)
+export default withStyles(styles)(Topbar);
