@@ -1,6 +1,6 @@
-import axios from "axios";
-import { AxiosRequestHeaders } from "axios";
-import { getSessionId, isSessionId } from "./local-storage-utils";
+import axios from 'axios';
+import { AxiosRequestHeaders } from 'axios';
+import { getSessionId, isSessionId } from './local-storage-utils';
 
 export const getApi = (): any => {
   const headers: AxiosRequestHeaders = !isSessionId()

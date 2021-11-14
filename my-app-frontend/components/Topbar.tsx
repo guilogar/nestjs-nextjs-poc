@@ -1,24 +1,24 @@
-import React from "react";
-import { useRouter } from "next/router";
+import React from 'react';
+import { useRouter } from 'next/router';
 
-import { AppBar } from "@mui/material";
-import { Toolbar } from "@mui/material";
-import { Typography } from "@mui/material";
-import { Button } from "@mui/material";
-import { IconButton } from "@mui/material";
-import { Menu } from "@mui/material";
-import { MenuItem } from "@mui/material";
-import { Fade } from "@mui/material";
-import { Hidden } from "@mui/material";
-import { Link } from "@mui/material";
-import { MoreVert } from "@mui/icons-material";
+import { AppBar } from '@mui/material';
+import { Toolbar } from '@mui/material';
+import { Typography } from '@mui/material';
+import { Button } from '@mui/material';
+import { IconButton } from '@mui/material';
+import { Menu } from '@mui/material';
+import { MenuItem } from '@mui/material';
+import { Fade } from '@mui/material';
+import { Hidden } from '@mui/material';
+import { Link } from '@mui/material';
+import { MoreVert } from '@mui/icons-material';
 
-import { makeStyles } from "@mui/styles";
-import { withStyles } from "@mui/styles";
+import { makeStyles } from '@mui/styles';
+import { withStyles } from '@mui/styles';
 
-import { Link as RLink, animateScroll as scroll } from "react-scroll";
+import { Link as RLink, animateScroll as scroll } from 'react-scroll';
 
-import { common } from "@mui/material/colors";
+import { common } from '@mui/material/colors';
 
 const styles: any = (theme: any) => ({
   root: {
@@ -30,7 +30,7 @@ const styles: any = (theme: any) => ({
   },
   title: {
     flexGrow: 1,
-    cursor: "pointer",
+    cursor: 'pointer',
     color: common.black,
   },
 });
@@ -72,7 +72,7 @@ const MobileMenu = () => {
           <MenuItem onClick={handleClose}>About</MenuItem>
         </Link>
 
-        {router.pathname == "/" ? (
+        {router.pathname == '/' ? (
           <RLink to="serviceSection" smooth={true} offset={-10} duration={500}>
             <MenuItem onClick={handleClose}>Services</MenuItem>
           </RLink>
@@ -116,7 +116,7 @@ const Topbar = () => {
               </Button>
             </Link>
 
-            {router.pathname == "/" ? (
+            {router.pathname == '/' ? (
               <RLink
                 to="serviceSection"
                 smooth={true}

@@ -1,9 +1,9 @@
 const PATHS: Array<string> = [
-  "/login",
-  "/register",
-  "/forgot-password",
-  "/about",
-  "/services",
+  '/login',
+  '/register',
+  '/forgot-password',
+  '/about',
+  '/services',
 ];
 
 export const availablePathWithoutLogin = (path: string): Boolean => {

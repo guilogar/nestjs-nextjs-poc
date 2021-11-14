@@ -1,8 +1,8 @@
-import React from "react";
+import React from 'react';
 
-import { Typography } from "@mui/material";
-import { makeStyles } from "@mui/styles";
-import { withStyles } from "@mui/styles";
+import { Typography } from '@mui/material';
+import { makeStyles } from '@mui/styles';
+import { withStyles } from '@mui/styles';
 
 const styles: any = (theme: any) => ({
   footer: {

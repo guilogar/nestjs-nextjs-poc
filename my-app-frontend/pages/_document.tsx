@@ -1,11 +1,11 @@
-import React from "react";
-import Document, { Html, Head, Main, NextScript } from "next/document";
-import type { DocumentProps } from "next/document";
+import React from 'react';
+import Document, { Html, Head, Main, NextScript } from 'next/document';
+import type { DocumentProps } from 'next/document';
 
-import { ServerStyleSheets } from "@mui/styles";
-import { withStyles } from "@mui/styles";
+import { ServerStyleSheets } from '@mui/styles';
+import { withStyles } from '@mui/styles';
 
-import theme from "../src/theme";
+import theme from '../src/theme';
 
 const MyDocument = (props: DocumentProps) => {
   return (

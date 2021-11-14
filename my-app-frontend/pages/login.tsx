@@ -1,40 +1,40 @@
-import type { NextPage } from "next";
-import { useState } from "react";
+import type { NextPage } from 'next';
+import { useState } from 'react';
 
-import { Button } from "@mui/material";
-import { TextField } from "@mui/material";
-import { FormControlLabel } from "@mui/material";
-import { Checkbox } from "@mui/material";
-import { Link } from "@mui/material";
-import { Grid } from "@mui/material";
-import { Typography } from "@mui/material";
-import { Container } from "@mui/material";
-import { Alert } from "@mui/material";
-import { makeStyles } from "@mui/styles";
-import { withStyles } from "@mui/styles";
+import { Button } from '@mui/material';
+import { TextField } from '@mui/material';
+import { FormControlLabel } from '@mui/material';
+import { Checkbox } from '@mui/material';
+import { Link } from '@mui/material';
+import { Grid } from '@mui/material';
+import { Typography } from '@mui/material';
+import { Container } from '@mui/material';
+import { Alert } from '@mui/material';
+import { makeStyles } from '@mui/styles';
+import { withStyles } from '@mui/styles';
 
-import MainLayout from "../components/MainLayout";
+import MainLayout from '../components/MainLayout';
 
-import { signIn } from "../src/services/sign-in";
+import { signIn } from '../src/services/sign-in';
 
 const styles: any = (theme: any) => ({
-  "@global": {
+  '@global': {
     body: {
       backgroundColor: theme.palette.common.white,
     },
   },
   paper: {
     marginTop: theme.spacing(4),
-    display: "flex",
-    flexDirection: "column",
-    alignItems: "center",
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
   },
   avatar: {
     margin: theme.spacing(1),
     backgroundColor: theme.palette.secondary.main,
   },
   form: {
-    width: "100%", // Fix IE 11 issue.
+    width: '100%', // Fix IE 11 issue.
     marginTop: theme.spacing(1),
   },
   submit: {
@@ -45,8 +45,8 @@ const useStyles = makeStyles(styles);
 
 const Login: NextPage = () => {
   const classes = useStyles();
-  const [username, setUsername] = useState<string>("");
-  const [password, setPassword] = useState<string>("");
+  const [username, setUsername] = useState<string>('');
+  const [password, setPassword] = useState<string>('');
   const [remember, setRemember] = useState<boolean>(false);
   const [error, setError] = useState<boolean>(false);
 

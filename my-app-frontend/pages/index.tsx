@@ -1,8 +1,8 @@
-import type { NextPage } from "next";
-import { useRouter } from "next/router";
-import { useEffect, useState } from "react";
-import { availablePathWithoutLogin } from "../src/services/available-paths-without-login";
-import { isSigned } from "../src/services/is-signed";
+import type { NextPage } from 'next';
+import { useRouter } from 'next/router';
+import { useEffect, useState } from 'react';
+import { availablePathWithoutLogin } from '../src/services/available-paths-without-login';
+import { isSigned } from '../src/services/is-signed';
 
 const App: NextPage = () => {
   const [isLog, setIsLog] = useState<Boolean>(isSigned());
@@ -11,10 +11,10 @@ const App: NextPage = () => {
   useEffect(() => {
     if (!isLog) {
       if (!availablePathWithoutLogin(router.pathname)) {
-        router.push("/login");
+        router.push('/login');
       }
     } else {
-      router.push("/home");
+      router.push('/home');
     }
   }, []);
   return <></>;

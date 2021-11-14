@@ -1,13 +1,13 @@
-import type { AppProps } from "next/app";
-import React from "react";
-import Head from "next/head";
+import type { AppProps } from 'next/app';
+import React from 'react';
+import Head from 'next/head';
 
-import { ThemeProvider } from "@mui/material";
-import { CssBaseline } from "@mui/material";
-import { withStyles } from "@mui/styles";
+import { ThemeProvider } from '@mui/material';
+import { CssBaseline } from '@mui/material';
+import { withStyles } from '@mui/styles';
 
-import theme from "../src/theme";
-import "../styles/globals.css";
+import theme from '../src/theme';
+import '../styles/globals.css';
 
 const MyApp = ({ Component, pageProps }: AppProps) => {
   return (
