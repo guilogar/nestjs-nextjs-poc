@@ -1,5 +1,3 @@
 import { UserController } from './users.controller';
 
-export default [
-  UserController
-];
+export default [UserController];

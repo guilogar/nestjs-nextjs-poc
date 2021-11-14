@@ -1,5 +1,3 @@
 import { User } from './user.entity';
 
-export default [
-  User
-];
+export default [User];

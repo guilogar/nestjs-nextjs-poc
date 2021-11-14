@@ -1,5 +1,8 @@
 import {
-  Module, NestModule, RequestMethod, MiddlewareConsumer
+  Module,
+  NestModule,
+  RequestMethod,
+  MiddlewareConsumer,
 } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
 
@@ -33,7 +36,8 @@ import entities from './entities/entities.module';
 export class AppModule implements NestModule {
   configure(consumer: MiddlewareConsumer) {
     consumer.apply(Middleware).forRoutes({
-      path: 'users', method: RequestMethod.ALL
+      path: 'users',
+      method: RequestMethod.ALL,
     });
   }
 }
